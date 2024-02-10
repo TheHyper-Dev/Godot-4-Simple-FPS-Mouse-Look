@@ -4,12 +4,12 @@ using System;
 public partial class MouseLook : Camera3D
 {
 	[Export] public Vector2 Rot = Vector2.Zero;
-	[Export] public Vector2 Senstitivity = Vector2.One;
+	[Export] public Vector2 Sensitivity = Vector2.One;
 	public override void _UnhandledInput(InputEvent input)
 	{
 		if (input is InputEventMouseMotion mouseMotion)
 		{
-			Rot -= mouseMotion.Relative * Senstitivity;
+			Rot -= mouseMotion.Relative * Sensitivity;
 
 			if (Math.Abs(Rot.X) > 360f)
 				Rot.X = 0f;
